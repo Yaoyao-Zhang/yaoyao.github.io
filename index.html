@@ -1,8 +1,83 @@
 <!DOCTYPE html>
-<html>
-  <head>
-  </head>
-    <body>
-      <h1> Yaoyao</h1> 
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yaoyao Zhang</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #f8f9fa;
+    }
+    .navbar-brand {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 2rem;
+    }
+    .intro-section {
+      padding: 40px 20px;
+    }
+    .contact-bar {
+      background-color: #1500b2;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.5rem;
+    }
+    .contact-bar i {
+      font-size: 2rem;
+      margin: 0 10px;
+      color: white;
+    }
+    .profile-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .offcanvas-title {
+      font-family: 'Brush Script MT', cursive;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Yaoyao Zhang</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="/personal.html">Personal</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://drive.google.com/file/d/1ZP3hOtuw_sy5lGYT5Xl9DgIRcBNy06-a/view" target="_blank">Resume</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="intro-section container d-flex flex-column flex-lg-row align-items-center">
+    <div class="col-lg-4 text-center">
+      <img src="/pictures/yaoyao_zhang-photo.JPG" class="profile-img" alt="Yaoyao Zhang Photo">
+    </div>
+    <div class="col-lg-8 mt-4 mt-lg-0 ps-lg-5">
+      <p>My name Yaoyao Zhang.</p>
+      <p>I am a 2026 STEM MBA candidate at Georgetown University's McDonough School of Business, with a strong passion for tech and finance. Before pursuing my MBA, I worked as a product manager in fintech (core banking, supply chain finance tech, stocks trading, risk analysis) for 4 years, where I thrived in leading innovative product development, managing cross-functional teams and driving strategic initiatives that delivered measurable impact.</p>
+      <p>Prior to my career in fintech, I earned a Master’s degree in International Relations and Economics from the Johns Hopkins University School of Advanced International Studies (SAIS), where I developed a global perspective and honed both my quantitative and qualitative analytical skills.</p>
+      <p>Feel free to reach me at my personal email at yaoyao.zhang44@gmail.com, or my Georgetown email at yz1408@georgetown.edu</p>
+    </div>
+  </section>
+
+  <div class="contact-bar">
+    <div>Wanna chat? Let's connect!</div>
+    <a href="https://www.linkedin.com/in/yaoyao-zhang-dc/" target="_blank"><i class="bi bi-linkedin"></i></a>
+    <a href="https://www.instagram.com/yaoyao.zhangyy/" target="_blank"><i class="bi bi-instagram"></i></a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</body>
 </html>

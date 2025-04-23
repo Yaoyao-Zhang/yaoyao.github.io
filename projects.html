@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yaoyao Zhang</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #f8f9fa;
+    }
+    .navbar-brand {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 2rem;
+    }
+    .project-nav {
+      border-right: 1px solid #ddd;
+      padding-right: 20px;
+    }
+    .project-nav li {
+      margin-bottom: 10px;
+    }
+    .project-nav .active {
+      font-weight: bold;
+    }
+    .main-content img {
+      max-width: 100%;
+      height: auto;
+    }
+    .contact-bar {
+      background-color: #1500b2;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.5rem;
+    }
+    .contact-bar i {
+      font-size: 2rem;
+      margin: 0 10px;
+      color: white;
+    }
+    .offcanvas-title {
+      font-family: 'Brush Script MT', cursive;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Yaoyao Zhang</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="/personal.html">Personal</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://drive.google.com/file/d/1ZP3hOtuw_sy5lGYT5Xl9DgIRcBNy06-a/view" target="_blank">Resume</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-3 project-nav">
+        <ul class="list-unstyled">
+          <li class="nav-item"><a class="nav-link active" href="/projects.html">Mari Credit Card</a></li>
+          <li class="nav-item"><a class="nav-link" href="/projects-cash-loan.html">Personal Cash Loan</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-9 main-content">
+        <p>Mari Credit Card is a product I worked on when I was the product manager at Sea Limited, the largest technology company in Southeast Asia.</p>
+        <img src="/pictures/mari1.png" alt="Mari Credit Card">
+        <img src="/pictures/mari2.png" alt="Mari Credit Card">
+        <img src="/pictures/mari3.png" alt="Mari Credit Card">
+        <img src="/pictures/mari4.png" alt="Mari Credit Card">
+        <img src="/pictures/mari5.png" alt="Mari Credit Card">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-bar mt-5">
+    <div>Wanna chat? Let's connect!</div>
+    <a href="https://www.linkedin.com/in/yaoyaozhang" target="_blank"><i class="bi bi-linkedin"></i></a>
+    <a href="https://www.instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <script src="projects.js"></script>
+</body>
+</html>
