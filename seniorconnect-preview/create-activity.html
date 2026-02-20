@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SeinorConnect — Create Activity</title>
+    <meta name="description" content="Create an activity on SeinorConnect." />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;500;700&family=Source+Sans+3:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="bg-orb orb-one"></div>
+    <div class="bg-orb orb-two"></div>
+    <header class="site-header">
+      <nav class="nav">
+        <div class="logo">SeinorConnect</div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="activities.html">Activities</a>
+          <a href="my-activities.html">My activities</a>
+          <a href="profile.html">Profile</a>
+          <a href="about.html">About</a>
+        </div>
+        <div class="nav-cta">
+          <button class="ghost" type="button">Log in</button>
+          <a class="primary" href="create-activity.html">Create activity</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page">
+      <section class="page-header">
+        <p class="eyebrow">Activity builder</p>
+        <h1>Create a new activity</h1>
+        <p class="lead">
+          Use the guided flow to set up a welcoming activity for your community.
+        </p>
+        <div class="wizard-launch">
+          <button class="primary" id="openWizard" type="button">
+            Start step-by-step
+          </button>
+          <a class="secondary" href="activities.html">Back to browsing</a>
+        </div>
+      </section>
+
+      <section class="card-soft">
+        <h2>Quick details</h2>
+        <form class="form">
+          <div>
+            <label for="title">Activity title</label>
+            <input class="input" id="title" placeholder="Ex: Morning Walk" />
+          </div>
+          <div class="form-row">
+            <div>
+              <label for="category">Category</label>
+              <select class="select" id="category">
+                <option>Wellness</option>
+                <option>Social</option>
+                <option>Creative</option>
+              </select>
+            </div>
+            <div>
+              <label for="capacity">Capacity</label>
+              <input class="input" id="capacity" placeholder="Ex: 12" />
+            </div>
+          </div>
+          <div>
+            <label for="notes">Notes</label>
+            <textarea class="textarea" id="notes" placeholder="Any important notes"></textarea>
+          </div>
+          <button class="secondary" type="button">Save draft</button>
+        </form>
+      </section>
+    </main>
+
+    <div class="modal-overlay" id="wizardOverlay">
+      <div class="modal" role="dialog" aria-modal="true">
+        <div class="progress">
+          <span class="active" data-step="1"></span>
+          <span data-step="2"></span>
+          <span data-step="3"></span>
+          <span data-step="4"></span>
+        </div>
+        <div class="wizard-step" data-step="1">
+          <h3>Step 1: Basics</h3>
+          <p>What is the activity called and who is it for?</p>
+          <input class="input" placeholder="Activity name" />
+        </div>
+        <div class="wizard-step" data-step="2" hidden>
+          <h3>Step 2: Time & location</h3>
+          <p>Pick a date, time, and location.</p>
+          <input class="input" placeholder="Date and time" />
+        </div>
+        <div class="wizard-step" data-step="3" hidden>
+          <h3>Step 3: Accessibility</h3>
+          <p>Let us know about mobility or sensory support.</p>
+          <input class="input" placeholder="Accessibility notes" />
+        </div>
+        <div class="wizard-step" data-step="4" hidden>
+          <h3>Step 4: Review</h3>
+          <p>Confirm details and publish.</p>
+          <input class="input" placeholder="Optional message" />
+        </div>
+        <footer>
+          <button class="ghost" id="prevStep" type="button">Back</button>
+          <button class="primary" id="nextStep" type="button">Next</button>
+        </footer>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div>
+        <div class="logo">SeinorConnect</div>
+        <p>Empowering independence through trusted local support.</p>
+      </div>
+      <div class="footer-links">
+        <a href="activities.html">Activities</a>
+        <a href="my-activities.html">My activities</a>
+        <a href="profile.html">Profile</a>
+        <a href="caregiver.html">Caregiver view</a>
+      </div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="safety.html">Safety</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </footer>
+
+    <script>
+      const overlay = document.getElementById("wizardOverlay");
+      const openButton = document.getElementById("openWizard");
+      const nextButton = document.getElementById("nextStep");
+      const prevButton = document.getElementById("prevStep");
+      const steps = Array.from(document.querySelectorAll(".wizard-step"));
+      const dots = Array.from(document.querySelectorAll(".progress span"));
+      let current = 0;
+
+      const renderStep = () => {
+        steps.forEach((step, index) => {
+          step.hidden = index !== current;
+        });
+        dots.forEach((dot, index) => {
+          dot.classList.toggle("active", index <= current);
+        });
+        prevButton.style.visibility = current === 0 ? "hidden" : "visible";
+        nextButton.textContent = current === steps.length - 1 ? "Publish" : "Next";
+      };
+
+      openButton.addEventListener("click", () => {
+        overlay.classList.add("active");
+        renderStep();
+      });
+
+      overlay.addEventListener("click", (event) => {
+        if (event.target === overlay) {
+          overlay.classList.remove("active");
+        }
+      });
+
+      nextButton.addEventListener("click", () => {
+        if (current < steps.length - 1) {
+          current += 1;
+          renderStep();
+          return;
+        }
+        overlay.classList.remove("active");
+        current = 0;
+        renderStep();
+      });
+
+      prevButton.addEventListener("click", () => {
+        if (current > 0) {
+          current -= 1;
+          renderStep();
+        }
+      });
+    </script>
+  </body>
+</html>
